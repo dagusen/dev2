@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 
-{% block head_title %}{{ block.super }}{% endblock head_title %}
+{% block head_title %}Course | {{ block.super }}{% endblock head_title %}
 
 {% block content %}
 <h1>Department list <small><a href='{% url "departments:create"%}'>Add</a></small></h1>
@@ -11,7 +11,7 @@
 		{{ obj.title }} {{ obj.department_code }} {{ obj.department_dean }} {{ obj.timestamp }} {{ obj.updated }}</li>
 
 		{% empty %}
-		<li><a href='{% url "departments:create"%}'>Add One</a></li>
+			<li><a href='{% url "departments:create"%}'>Add One</a></li>
 
 	{% endfor %}
 </ul>

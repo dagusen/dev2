@@ -10,5 +10,5 @@ from .views import (
 urlpatterns = [
 	url(r'^$', DepartmentListView.as_view(), name='list'),
 	url(r'^create/$', DepartmentCreateView.as_view(), name='create'),
-	url(r'^(?P<slug>[\w-]+)/$', DepartmentUpdateView.as_view(), name='detail')
+	url(r'^(?P<slug>[\w-]+)/$', DepartmentUpdateView.as_view(), name='edit')
 ]

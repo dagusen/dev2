@@ -37,11 +37,11 @@ class DepartmentUpdateView(UpdateView):
 	form_class = DepartmentCreateForm
 	template_name = 'departments/detail-update.html'
 
+	def get_queryset(self):
+		return Department.objects.filter(owner=self.request.user)
+
 	def get_context_data(self, *args, **kwargs):
 		context = super(DepartmentUpdateView, self).get_context_data(*args, **kwargs)
 		department_name = self.get_object().department_name
 		context['title'] = 'Update Department:%s'% department_name
 		return context
-
-	def get_queryset(self):
-		return Department.objects.filter(owner=self.request.user)

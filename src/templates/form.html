@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+
+{% block head_title %}{{ title }} | {{ block.super }}{% endblock head_title %}
+
+{% if form.errors.non_field_errors %}
+	{{ form.errors.non_field_errors }}
+{% endif %}
+
+{% block content %}
+<h1>{{ title }}</h1>
+
+{% include 'snippets/form-snippet.html'%}
+
+{% endblock %}

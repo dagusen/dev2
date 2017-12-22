@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+
+{% block head_title %}{{ block.super }}{% endblock head_title %}
+
+{% block content %}
+<h1>Department list <small><a href='{% url "departments:create"%}'>Add</a></small></h1>
+<ul>
+	{% for obj in object_list %}
+		<li><a href='{{ obj.get_absolute_url }}'>{{ obj }}</a><br/>
+		{{ obj.title }} {{ obj.department_code }} {{ obj.department_dean }} {{ obj.timestamp }} {{ obj.updated }}</li>
+
+		{% empty %}
+		<li><a href='{% url "departments:create"%}'>Add One</a></li>
+
+	{% endfor %}
+</ul>
+{% endblock %}

@@ -7,7 +7,7 @@
 <h1>Course list <small><a href='{% url "courses:create"%}'>Add</a></small></h1>
 <ul>
 	{% for obj in object_list %}
-		<li><a href='{{ obj.get_absolute_url }}'>{{ obj.title }}</a><br/>{{ obj.course_code }} {{ obj.department }} {{ obj.timestamp }} {{ obj.updated }}</li>
+		<li><a href='{{ obj.get_absolute_url }}'>{{ obj.title }}</a><br/>{{ obj.course_code }} {{ obj.department }} <br/> <small>{{ obj.timestamp }} {{ obj.updated }}</small></li>
 
 		{% empty %}
 			<li><a href='{% url "courses:create"%}'>Add One</a></li>

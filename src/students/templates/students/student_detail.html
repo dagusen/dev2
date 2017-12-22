@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block head_title %}{{ object }} | {{ block.super }}{% endblock head_title %}
+
+{% block content %}
+<h1>{{ object.title }} {{ object.middle_name }} {{ object.last_name }}</h1>
+<p>Gender: {{ object.gender }}</p>
+<p>Age: {{ object.age }}</p>
+<p>Course and Year: <small> {{ object.course }} - {{ object.year }}</small></p>
+<small>{{ object.timestamp }}, Updated {{ object.updated|timesince }} ago</small>
+
+{% endblock %}

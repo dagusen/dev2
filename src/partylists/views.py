@@ -36,3 +36,17 @@ class PartyListCreateView(CreateView):
 		context = super(PartyListCreateView, self).get_context_data(*args, **kwargs)
 		context['title'] = 'Add Party List'
 		return context
+
+class PartyListUpdateView(UpdateView):
+	form_class = PartyListCreateForm
+	template_name = 'partylists/detail-update.html'
+
+	# context for html title
+	def get_context_data(self, *args, **kwargs):
+		context = super(PartyListUpdateView, self).get_context_data(*args, **kwargs)
+		partylist_name = self.get_object().partylist_name
+		context['title'] = 'Update Party List:%s'% partylist_name
+		return context
+
+	def get_queryset(self):
+		return PartyList.objects.filter(user=self.request.user)

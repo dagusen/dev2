@@ -24,7 +24,7 @@ class PartyList(models.Model):
 		return self.partylist_name
 
 	def get_absolute_url(self):
-	  	return reverse('partylists:detail', kwargs={'slug': self.slug})
+	  	return reverse('partylists:edit', kwargs={'slug': self.slug})
 
 	def get_goals(self):
 		return self.goals.split(",")

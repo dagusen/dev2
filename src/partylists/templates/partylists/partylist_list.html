@@ -4,7 +4,7 @@
 {% block head_title %}Party Lists | {{ block.super }}{% endblock head_title %}
 
 {% block content %}
-
+<h1>Party Lists <small><a href='{% url "partylists:create"%}'>Add</a></small></h1>
 <ul>
 	{% for obj in object_list %}
 	<li><a href='{{ obj.get_absolute_url }}'>{{ obj.partylist_name }}</a><br/>
@@ -26,6 +26,8 @@
 		</ul>
 		{% endif %}
 	</li>
+	{% empty %}
+		<li><a href='{% url "partylists:create"%}'>Add One</a></li>
 	{% endfor %}
 </ul>
 {% endblock %}

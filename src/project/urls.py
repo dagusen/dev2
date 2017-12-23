@@ -20,5 +20,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^departments/', include('departments.urls', namespace='departments')),
     url(r'^courses/', include('courses.urls', namespace='courses')),
-    url(r'^students/', include('students.urls', namespace='students'))
+    url(r'^students/', include('students.urls', namespace='students')),
+    url(r'^partylists/', include('partylists.urls', namespace='partylists')),
 ]

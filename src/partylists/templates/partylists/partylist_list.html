@@ -7,25 +7,25 @@
 
 <ul>
 	{% for obj in object_list %}
-		<li><a href='{{ obj.get_absolute_url }}'>{{ obj.partylist_name }}</a><br/>
-			{% if obj.goals %}
-			Goals
-			<ul>
-				{% for partylist in obj.get_goals %}
-				<li>{{ partylist }}</li>
-				{% endfor %}
-			</ul>
-			{% endif %}
+	<li><a href='{{ obj.get_absolute_url }}'>{{ obj.partylist_name }}</a><br/>
+		{% if obj.goals %}
+		Goals
+		<ul>
+			{% for partylist in obj.get_goals %}
+			<li>{{ partylist }}</li>
+			{% endfor %}
+		</ul>
+		{% endif %}
 
-			{% if obj.projects %}
-			Projects
-			<ul>
-				{% for partylist in obj.get_projects %}
-				<li>{{ partylist }}</li>
-				{% endfor %}
-			</ul>
-			{% endif %}
-		</li>
+		{% if obj.projects %}
+		Projects
+		<ul>
+			{% for partylist in obj.get_projects %}
+			<li>{{ partylist }}</li>
+			{% endfor %}
+		</ul>
+		{% endif %}
+	</li>
 	{% endfor %}
 </ul>
 {% endblock %}

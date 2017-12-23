@@ -9,6 +9,8 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView
 
 from .models import PartyList
 
+from .forms import PartyListCreateForm
+
 User = settings.AUTH_USER_MODEL
 
 # Create your views here.
@@ -20,3 +22,4 @@ class PartylistListView(ListView):
 class PartylistDetailView(DetailView):
 	def get_queryset(self):
 		return PartyList.objects.filter(user=self.request.user)
+
